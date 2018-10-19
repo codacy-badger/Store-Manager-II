@@ -116,7 +116,7 @@ def delete_sale(sale_id):
     if len(sale)  == 0:
         abort(404)
     sales.remove(sale[0])
-    return jsonify({'':}), 200
+    return jsonify(), 200
 
 @app.route('/store/api/v1/product/<int:product_id>', methods=['DELETE'])
 def delete_product(product_id):
@@ -124,7 +124,7 @@ def delete_product(product_id):
     if len(product) == 0:
         abort(404)
     products.remove(product[0])
-    return jsonify({'':}), 200
+    return jsonify(), 200
 
 if __name__ == '__main__':
     app.run(debug=True)
