@@ -113,16 +113,12 @@ def update_product(product_id):
 @app.route('/store/api/v1/sales/<int:sale_id>', methods=['DELETE'])
 def delete_sale(sale_id):
     sale = [sale for sale in sales if sale['id'] == sale_id]
-    if len(sale)  == 0:
-        abort(404)
     sales.remove(sale[0])
     return jsonify(), 200
 
 @app.route('/store/api/v1/product/<int:product_id>', methods=['DELETE'])
 def delete_product(product_id):
     product = [product for product in products if product['id'] == product_id]
-    if len(product) == 0:
-        abort(404)
     products.remove(product[0])
     return jsonify(), 200
 
