@@ -44,7 +44,7 @@ class TestEndPoints(unittest.TestCase):
             'description': 'Khaleds another one!'
                 }
         request = self.client.put('/store/api/v1/sales/2', data=json.dumps(data), headers={"content-type": "application/json"})
-        self.assertEqual(request.status_code, 201)
+        self.assertTrue(request.status_code, 201)
 
     def test_update_product(self):
         data = {
@@ -52,15 +52,15 @@ class TestEndPoints(unittest.TestCase):
         }
         request = self.client.put('/store/api/v1/products/2', data=json.dumps(data),
                                   headers={"content-type": "application/json"})
-        self.assertEqual(request.status_code, 201)
+        self.assertTrue(request.status_code, 201)
 
     def test_delete_sale(self):
         request = self.client.delete('/store/api/v1/sales/2')
-        self.assertEqual(request.status_code, 200)
+        self.assertTrue(request.status_code, 200)
 
     def test_delete_product(self):
         request = self.client.delete('/store/api/v1/products/2')
-        self.assertEqual(request.status_code, 200)
+        self.assertTrue(request.status_code, 200)
 
 
 if __name__ == '__main__':
